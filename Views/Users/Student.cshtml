@@ -1,0 +1,37 @@
+﻿@model SchoolCourseRegistration.Models.User
+
+
+@{
+    ViewData["Title"] = "Student";
+}
+
+
+
+
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title"> Welcome</h4>
+             
+    </div>
+    <div class="card-body">
+        <h6><b>Email</b></h6>
+        <p><b> @Html.DisplayFor(model => model.Email)</b></p>
+        <hr />
+        <h6><b>Role</b></h6>
+        <p><b> @Html.DisplayFor(model => model.Role)</b></p>
+    </div>
+</div>   
+
+
+    <div>
+        <form asp-controller="Users" asp-action="Search">
+            <p>
+                Matric Number: <input type="text" name="SearchString" />
+                <input type="submit" value="Search" placeholder="Matric Number" />
+            </p>
+        </form>
+    </div>
+
+
+    
+

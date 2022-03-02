@@ -1,0 +1,110 @@
+﻿@model IEnumerable<SchoolCourseRegistration.Models.Course>
+
+@{
+    ViewData["Title"] = "Index";
+}
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SchoolCourseRegistration</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <h1>Courses</h1>
+        <nav class="navbar navbar-expand-sm bg-light">
+            <div class="container-fluid">
+                <ul class="navbar-nav">
+                    <li class="nav-link">
+                        <a asp-area="" asp-controller="CourseRegs" asp-action="Index">Registered Student</a>
+                    </li>
+                    <li class="nav-link">
+                        <a asp-area="" asp-controller="Users" asp-action="Index"> Users</a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a asp-action="Create">Create New Course</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CourseCode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CourseTitle)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CourseHandler)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreditUnit)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Semester)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Level)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NumberOfReg)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CourseCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CourseTitle)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CourseHandler)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreditUnit)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Semester)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Level)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NumberOfReg)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - SchoolCourseRegistration - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @*@await RenderSectionAsync("Scripts", required: false)*@
+</body>
+</html>

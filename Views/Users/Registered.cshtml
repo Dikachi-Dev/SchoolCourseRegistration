@@ -1,0 +1,95 @@
+﻿@model IEnumerable<SchoolCourseRegistration.Models.CourseReg>
+
+@*@{
+    Layout = null;
+}*@
+
+@*<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+   
+</head>
+<body>*@
+    <p>
+        <a asp-controller="CourseRegs" asp-action="Register">Register Course</a>
+    </p>
+
+
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title"> Registered Course</h4>
+        </div>
+        <div class="card-body table-responsive">
+            <table class="table table-bordered table-success">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.MatNo)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CourseCode)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CourseTitle)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CourseHandler)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CreditUnit)
+                        </th>
+
+                        <th>
+                            @Html.DisplayNameFor(model => model.Semester)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Level)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Status)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MatNo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CourseCode)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CourseTitle)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CourseHandler)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CreditUnit)
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Semester)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Level)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Status)
+                            </td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    
+@*</body>
+</html>*@
